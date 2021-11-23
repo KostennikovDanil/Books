@@ -7,18 +7,22 @@ using System.Text;
 
 namespace BooksDb.Repositories
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : DbContextRepositoryBase<User, int>, IUserRepository
     {
-        private readonly BooksDbContext db;
-        public UserRepository(BooksDbContext db)
+        public UserRepository(BooksDbContext db): base(db)
         {
-            this.db = db;
         }
 
-        protected IQueryable<User> AllInclude(IQueryable<User> source)
+        public IQueryable<User> All()
         {
             return AllInclude(db.Set<User>());
         }
+        protected override IQueryable<User> AllInclude(IQueryable<User> source)
+        {
+            return AllInclude(db.Set<User>());
+        }
+
+
         protected IQueryable<User> ByKeyInclude(IQueryable<User> source)
         {
             return AllInclude(db.Set<User>());

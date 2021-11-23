@@ -1,4 +1,5 @@
 ﻿using BooksService.Models;
+using BooksService.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,6 +14,12 @@ namespace Books.Controllers
     [ApiController]
     public class RegistrationController
     {
+        private readonly IRegistrationService registrationService;
+
+        public RegistrationController(IRegistrationService registrationService)
+        {
+            this.registrationService = registrationService;
+        }
 
         [Route("/api/v1/user/register")]
         [HttpPost()]
@@ -22,21 +29,7 @@ namespace Books.Controllers
         [Consumes(MediaTypeNames.Application.Json)]
         public async Task<ActionResult<UserRegistrationResponse>> RegisterAsync([FromBody] UserRegistrationRequest request)
         {
-            //return await RestMethod(request,
-            //    _ => userValidator.Validate(_),
-            //    async _ =>
-            //    {
-            //        var result = await userService.RegisterAsync(_, CancellationToken.None);
-
-            //        if (result.ResponseCode != UserRegistrationResponse.RegistrationResponseCode.Success)
-            //            return result;
-
-            //        await userService.SaveAllChangesAsync();
-
-            //        return result;
-            //    });
-
-
+            return await registrationService.RegistrAsync(request);
         }
 
     }

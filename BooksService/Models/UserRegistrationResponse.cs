@@ -18,8 +18,8 @@ namespace BooksService.Models
         public enum RegistrationResponseCode : int
         {
             Success = 0,
-            [EnumMember(Value = "email_already_registered")]
-            EmailAlreadyRegistered = 1,
+            [EnumMember(Value = "user_name_already_registered")]
+            UserNameAlreadyRegistered = 1,
             [EnumMember(Value = "validation_failed")]
             ValidationFailed = 2,
             [EnumMember(Value = "phone_number_already_registered")]

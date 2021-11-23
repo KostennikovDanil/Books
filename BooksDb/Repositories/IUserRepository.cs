@@ -6,7 +6,8 @@ using System.Text;
 
 namespace BooksDb.Repositories
 {
-    public class IUserRepository
+    public interface IUserRepository : IRepository<User>
     {
+        IQueryable<User> All();
     }
 }

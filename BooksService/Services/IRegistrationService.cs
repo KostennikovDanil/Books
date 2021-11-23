@@ -5,6 +5,6 @@ namespace BooksService.Services
 {
     public interface IRegistrationService
     {
-        Task RegistrAsync(UserRegistrationRequest request);
+        Task<UserRegistrationResponse> RegistrAsync(UserRegistrationRequest request);
     }
 }

@@ -13,7 +13,6 @@ namespace BooksService.Services
     public class RegistrationService : IRegistrationService
     {
         private readonly IUserRepository userRepository;
-        private readonly BooksDbContext bookDbContext;
         public RegistrationService(IUserRepository userRepository)
         {
             this.userRepository = userRepository;

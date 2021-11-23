@@ -1,3 +1,4 @@
+using BooksDb.Repositories;
 using BooksService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,8 +28,10 @@ namespace Books
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //rep
+            services.AddScoped<IUserRepository, UserRepository>();
 
-
+            //services
             services.AddScoped<IRegistrationService, RegistrationService>();
         }
 

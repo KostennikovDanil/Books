@@ -13,10 +13,6 @@ namespace BooksDb.Repositories
         {
         }
 
-        public IQueryable<User> All()
-        {
-            return AllInclude(db.Set<User>());
-        }
         protected override IQueryable<User> AllInclude(IQueryable<User> source)
         {
             return AllInclude(db.Set<User>());

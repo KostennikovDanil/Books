@@ -25,3 +25,9 @@ C:\Dev\Books\BooksDb\obj\Debug\netcoreapp3.1\BooksDb.AssemblyInfo.cs
 C:\Dev\Books\BooksDb\obj\Debug\netcoreapp3.1\BooksDb.csproj.CoreCompileInputs.cache
 C:\Dev\Books\BooksDb\obj\Debug\netcoreapp3.1\BooksDb.dll
 C:\Dev\Books\BooksDb\obj\Debug\netcoreapp3.1\BooksDb.pdb
+C:\Dev\Books\BooksDb\bin\Debug\netcoreapp3.1\BooksDb.deps.json
+C:\Dev\Books\BooksDb\bin\Debug\netcoreapp3.1\BooksDb.runtimeconfig.json
+C:\Dev\Books\BooksDb\bin\Debug\netcoreapp3.1\BooksDb.runtimeconfig.dev.json
+C:\Dev\Books\BooksDb\bin\Debug\netcoreapp3.1\BooksDb.dll
+C:\Dev\Books\BooksDb\bin\Debug\netcoreapp3.1\BooksDb.pdb
+C:\Dev\Books\BooksDb\obj\Debug\netcoreapp3.1\BooksDb.genruntimeconfig.cache

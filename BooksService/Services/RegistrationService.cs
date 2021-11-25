@@ -13,9 +13,11 @@ namespace BooksService.Services
     public class RegistrationService : IRegistrationService
     {
         private readonly IUserRepository userRepository;
-        public RegistrationService(IUserRepository userRepository)
+        private readonly BooksDbContext dbContext;
+        public RegistrationService(IUserRepository userRepository, BooksDbContext dbContext)
         {
             this.userRepository = userRepository;
+            this.dbContext = dbContext;
         }
         public async Task<UserRegistrationResponse> RegistrAsync(UserRegistrationRequest request)
         {
@@ -23,11 +25,11 @@ namespace BooksService.Services
             if (validationResult == false)
                 return new UserRegistrationResponse { Affected = 0, IsCodeSentSuccess = false, ResponseCode = UserRegistrationResponse.RegistrationResponseCode.ValidationFailed };
 
-            var user = await userRepository.All().FirstOrDefaultAsync(_ => _.UserName == request.UserName);
-             if(user != null)
+            var user = await dbContext.Users.FirstOrDefaultAsync(_ => _.UserName == request.UserName);
+            if (user != null)
                 return new UserRegistrationResponse { Affected = 0, IsCodeSentSuccess = false, ResponseCode = UserRegistrationResponse.RegistrationResponseCode.UserNameAlreadyRegistered };
 
-             var userByPhone = userRepository.All().FirstOrDefaultAsync(_ => _.PhoneNumber == request.PhoneNumber);
+            var userByPhone = dbContext.Users.FirstOrDefaultAsync(_ => _.PhoneNumber == request.PhoneNumber);
             if (userByPhone != null)
                 return new UserRegistrationResponse { Affected = 0, IsCodeSentSuccess = false, ResponseCode = UserRegistrationResponse.RegistrationResponseCode.PhoneNumberAlreadyRegistered };
 
@@ -40,6 +42,7 @@ namespace BooksService.Services
                 UserName = request.UserName,
                 PasswordHash = request.Password // to do: hash it
             });
+            await userRepository.SaveChangesAsync();
             return new UserRegistrationResponse { Affected = 1, IsCodeSentSuccess = true, ResponseCode = UserRegistrationResponse.RegistrationResponseCode.Success };
 
         }

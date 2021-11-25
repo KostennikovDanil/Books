@@ -1,0 +1,17 @@
+﻿@host = http://localhost:5000/api/v1/
+@dev_host = http://192.168.0.103:20081/api/dev/
+### health
+GET {{host}}health
+
+### registration 
+
+POST {{host}}user/register
+Content-Type: application/json
+
+{
+  "userName": "userName",
+  "firstName": "Danil",
+  "lastName": "Kostennikov",
+  "phoneNumber": "+79046471299",
+  "password": "12345678"
+}

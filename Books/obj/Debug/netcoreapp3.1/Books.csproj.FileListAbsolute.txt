@@ -75,3 +75,10 @@ C:\Dev\Books\Books\obj\Debug\netcoreapp3.1\Books.RazorTargetAssemblyInfo.cache
 C:\Dev\Books\Books\obj\Debug\netcoreapp3.1\Books.csproj.CopyComplete
 C:\Dev\Books\Books\obj\Debug\netcoreapp3.1\Books.genruntimeconfig.cache
 C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Dev\Books\Books\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

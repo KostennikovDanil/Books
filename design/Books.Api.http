@@ -15,3 +15,12 @@ Content-Type: application/json
   "phoneNumber": "+79046471299",
   "password": "12345678"
 }
+
+### auth
+POST {{host}}user/auth
+Content-Type: application/json
+
+{
+  "userName": "userName",
+  "password": "12345678"
+}
